@@ -1,0 +1,178 @@
+
+body {
+    background-color: #000;
+}
+
+span, p, h1, h2, h3, label {
+    color: #DAE3E5;
+}
+
+.nav-main a {
+    margin-right: 50px;
+    border-radius: 30px;
+    font-size: 100%;
+}
+
+.login-form {
+    padding: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs label {
+    font-size: 12px; 
+    line-height: 16px;
+}
+
+.inputs input {
+    border: none;
+    background-color: #313339;
+    padding: 10px;
+    height: 40px;
+    border-radius: 3px;
+    border-color: #040506;
+    width: 100%;
+    color: #dcddde;
+}
+
+.inputs input:focus {
+    border-color: #000;
+}
+
+.form span {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.form p {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.form, .auth {
+    background-color: #36393F;
+}
+
+.auth {
+    padding: 32px;
+    border-radius: 5px;
+    width: 784px;
+    margin-left: 30px;
+} 
+
+.inputs span {
+    font-size: 14px;
+    line-height: 16px;
+    color: #72767d;
+}
+
+.forget {
+    color: #7289da;
+    margin-bottom: 3px;
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 4px;
+    width: auto;
+    background: none;
+    border: none;
+    font-size: 14px;
+}
+
+.eye {
+    position: absolute;
+    top: 20.6rem;
+    right: 20rem;
+    cursor: pointer;
+}
+
+.eye {
+    background: none;
+    border: none;
+}
+
+.eye:hover {
+    background-color: none;
+}
+
+
+.forget:hover {
+    cursor: pointer;
+}
+
+.inputs span {
+    font-size: 14px;
+    font-family:  'Whitney','Helvetica Neue','Helvetica','Arial','sans-serif';
+}
+
+.enter {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 24px;
+    margin-bottom: 8px;
+    background-color: #7289da;
+    color: #fff;
+    padding: 10px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    border: none;
+}
+
+.title {
+    color: #8e9297;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.h5-title span a {
+    display: block;
+    color:#fff;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: 0.5s;
+    text-align: center;
+}
+
+.h5-title span a:hover {
+    color:#e91e63;
+    transform: rotateY(360deg);
+}
+
+.h5-title span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #fff;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.h5-title p {
+    color: #b9bbbe;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.inputs button:hover {
+    background-color: #677bc4;
+}
+
+.inputs p {
+    display:block;
+    color:#aaa;
+    margin:0 10px;
+    font-size:20px;
+    transition:0.5s;
+    text-align:center;
+}
+
+.header {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
