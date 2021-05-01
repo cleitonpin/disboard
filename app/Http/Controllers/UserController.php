@@ -20,6 +20,7 @@ class UserController extends Controller
 
     public function dashboard()
     {
+
         $user = [
             'name' => "Lok",
             'email' => '*************@hotmail.com',
@@ -31,6 +32,14 @@ class UserController extends Controller
 
     public function create(Request $r)
     {
+        $validated = $r->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|unique:users|max:255',
+            'username' => 'required|max:255',
+            'birthday' => 'required|max:255',
+            'password' => 'required|max:255',
+        ]);
+
         $user = new User();
         $user->name = 'Lok';
         $user->email = $r->email;
@@ -53,8 +62,9 @@ class UserController extends Controller
             return redirect('landing');
         }
 
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
+        return back()->with(
+            'email',
+            'The provided credentials do not match our records.',
+        );
     }
 }

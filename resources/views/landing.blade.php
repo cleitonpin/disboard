@@ -49,10 +49,10 @@
                     </li>
                 @endif
             </ul>
-            @if ($logado === true)
+            @if (Auth::check())
                 <a class="btn btn-outline-secondary my-2 my-sm-0" href="{{ url('login') }}">Abrir disboard</a>
             @else
-                <a class="btn btn-outline-secondary my-2 my-sm-0" href="./login.html">Entrar</a>
+                <a class="btn btn-outline-secondary my-2 my-sm-0" href="{{ route('login') }}">Entrar</a>
             @endif
         </div>
     </nav>

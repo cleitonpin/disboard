@@ -68,7 +68,7 @@
 						<th>Membros</th>
 						<th>Bots</th>
 						<th>Cargos</th>
-						<th>Canais de texto</th>
+						<th>Canais texto</th>
 						<th>Canais de voz</th>
 						<th></th>
 					</tr>
@@ -88,9 +88,10 @@
                             <td>{{ $guild['roles'] }}</td>
                             <td>{{ $guild['channel_texts'] }}</td>
                             <td>{{ $guild['channel_voice'] }}</td>
-                            <td>
-                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                            <td width="15%">
+                                <a href="#"><i class="material-icons" data-toggle="tooltip" title="Ver">&#xE8f4;</i></a>
+                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
+                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Excluir">&#xE872;</i></a>
                             </td>
                         </tr>
                     @endforeach

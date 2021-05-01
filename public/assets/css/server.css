@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(47, 49, 54) !important;
+}
+
+.container {
+    padding: 20px;
+}
+
+.my-account {
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    background-color: rgb(54, 57, 63);
+}
+
+.my-account p {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font: 16px;
+    text-align: center;
+    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.image button {
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+    color: #87909c;
+    background: none;
+    border: none;
+}
+
+.image button:hover {
+    color: #72767d;
+}
+
+.image {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.button button {
+    padding: 8px;
+    color: #fff;
+    border-color: #fff;
+    background-color: rgb(54, 57, 63);
+    display: flex;
+    border-width: thin;
+    font-size: 12px;
+    margin-top: 15px;
+    border-radius: 6px;
+}
+
+.button {
+    display: flex;
+}
+
+.content {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #b9bbbe;
+}
+
+.text {
+    margin-left: 10px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.geral {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.flex {
+    display: flex;
+}
+
+.name-server {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+}
+
+.server label {
+    font-size: 12px;
+    color: #8e9297;
+    margin-bottom: 8px;
+}
+
+.server input {
+    padding: 10px;
+    height: 40px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    background-color: #36393F;
+    color: #dcddde;
+}
+
+.server {
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.server input:focus {
+    outline: none;
+    border-color: #7289da;
+}
+
+.region h4 {
+    font-size: 12px;
+    color: #8e9297;
+    margin-bottom: 8px;
+}
+
+.help {
+    font-size: 14px;
+    color: #b9bbbe;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.help a {
+    color: #00b0f4;
+    text-decoration: none;
+}
+
+.help a:hover {
+    color: #00b0f4;
+    text-decoration: underline;
+}

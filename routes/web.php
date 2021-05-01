@@ -19,8 +19,11 @@ use App\Http\Controllers\GuildController;
 Route::get('/about', function () {
     return view('about');
 });
+Route::get('/server', function () {
+    return view('server');
+});
 
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::get('/dashboard', [UserController::class, 'dashboard']);
 
 
@@ -29,7 +32,7 @@ Route::post('/logar', [UserController::class, 'logar'])->name('logar');
 
 Route::get('/register', [UserController::class, 'register']);
 
-Route::get('/landing', [LandingController::class, 'index'])->middleware('auth');
+Route::get('/landing', [LandingController::class, 'index']);
 Route::get('/guilds', [GuildController::class, 'index']);
 
 

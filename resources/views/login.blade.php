@@ -40,10 +40,34 @@
                     <div class="inputs">
                         <label class="title">
                             E-MAIL OU NÚMERO DE TELEFONE
-                            {{-- - Login ou senha inválidos --}}
+                            @if (session('email'))
+                                <span class="errorMessage" style="
+                                font-size: 12px;
+                                font-weight: 500;
+                                font-style: italic;
+                                color: #f04747;
+                                text-transform: none">
+                                    <span class="error" style="padding-left: 4px;
+                                    padding-right: 4px;">-</span>
+                                    Login ou senha inválidos    
+                                </span>
+                            @endif
                         </label><br>
                         <input type="text" name="email"><br>
-                        <label class="title">SENHA</label><br>
+                        <label class="title">SENHA
+                            @if (session('email'))
+                            <span class="errorMessage" style="
+                            font-size: 12px;
+                            font-weight: 500;
+                            font-style: italic;
+                            color: #f04747;
+                            text-transform: none">
+                                <span class="error" style="padding-left: 4px;
+                                padding-right: 4px;">-</span>
+                                Login ou senha inválidos    
+                            </span>
+                        @endif
+                        </label><br>
                         <input id="pass" name="password" type="password">
                         <p onclick="showPassword()" id="eye" class="eye">
                             <i id="fa-icon" class="fa fa-eye-slash" aria-hidden="true"></i>
