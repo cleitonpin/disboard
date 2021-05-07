@@ -67,4 +67,10 @@ class UserController extends Controller
             'The provided credentials do not match our records.',
         );
     }
+
+    public function forgot() {
+        return view('forgot');
+    }
+
+
 }

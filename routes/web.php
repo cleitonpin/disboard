@@ -24,8 +24,8 @@ Route::get('/server', function () {
 });
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::get('/forgot', [UserController::class, 'forgot'])->name('login');
 Route::get('/dashboard', [UserController::class, 'dashboard']);
-
 
 Route::post('/create', [UserController::class, 'create'])->name('create');
 Route::post('/logar', [UserController::class, 'logar'])->name('logar');

@@ -35,6 +35,7 @@ span, p, h1, h2, h3, label {
     border-color: #040506;
     width: 100%;
     color: #dcddde;
+    outline: 0;
 }
 
 .inputs input:focus {

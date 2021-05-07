@@ -12,16 +12,7 @@
     <title>Disboard</title>
 </head>
 <body>
-    <nav style="padding: 25px" class="navbar navbar-expand-lg navbar-light">
-        <div class="collapse navbar-collapse nav-main" id="navbarText">
-            <a 
-                style="color: #DAE3E5; font-family: 'Open Sans Condensed'; margin-left: 30px;" 
-                class="navbar-brand" href="#">
-                <img style="margin-bottom: 5px;" src="https://img.icons8.com/material-sharp/24/fa314a/source-code.png"> 
-                DISBOARD
-            </a>
-        </div>
-    </nav>
+    @include('layout.nav')
 
     <main>
         <form action="{{ route('logar') }}" method="POST" class="login-form">
@@ -56,23 +47,23 @@
                         <input type="text" name="email"><br>
                         <label class="title">SENHA
                             @if (session('email'))
-                            <span class="errorMessage" style="
-                            font-size: 12px;
-                            font-weight: 500;
-                            font-style: italic;
-                            color: #f04747;
-                            text-transform: none">
-                                <span class="error" style="padding-left: 4px;
-                                padding-right: 4px;">-</span>
-                                Login ou senha inválidos    
-                            </span>
-                        @endif
+                                <span class="errorMessage" style="
+                                font-size: 12px;
+                                font-weight: 500;
+                                font-style: italic;
+                                color: #f04747;
+                                text-transform: none">
+                                    <span class="error" style="padding-left: 4px;
+                                    padding-right: 4px;">-</span>
+                                    Login ou senha inválidos    
+                                </span>
+                            @endif
                         </label><br>
                         <input id="pass" name="password" type="password">
                         <p onclick="showPassword()" id="eye" class="eye">
                             <i id="fa-icon" class="fa fa-eye-slash" aria-hidden="true"></i>
                         </p>
-                        <a class="forget">Esqueceu a senha?</a><br>
+                        <a href="{{url('forgot')}}" class="forget">Esqueci a senha</a><br>
                         <button class="enter" type="submit">Entrar</button><br>
                         <span>Precisando de uma conta? <a style="color: #7289da;" href="{{ url('register') }}">Registre-se</a></span>
                     </div>

@@ -40,7 +40,7 @@
                             <input type="date" name="date" id="">
                         </div>
                         <button class="enter" type="submit">Continuar</button><br>
-                        <span><a style="color: #7289da;" href="#">Já tem uma conta?</a></span>
+                        <span><a style="color: #7289da;" href="{{url('login')}}">Já tem uma conta?</a></span>
 
                         <div class="terms">
                             <p>Ao se registrar, você concorda com os <a href="#">termos de serviço</a> e a <a href="#">política de privacidade</a>
