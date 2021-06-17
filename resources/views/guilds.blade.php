@@ -41,10 +41,14 @@
 </head>
 <body>
 <div class="container-xl">
+    @if(session('sucesso'))
+        <p style="margin-top: 15px;" class="alert alert-success">{{session('sucesso')}}</p>
+    @endif
 	<div class="table-responsive">
 		<div class="table-wrapper">
 			<div class="table-title">
 				<div class="row">
+                    
 					<div class="col-sm-6">
 						<h2>Seus Servidores</h2>
 					</div>
@@ -92,6 +96,52 @@
                                 <a href="#"><i class="material-icons" data-toggle="tooltip" title="Ver">&#xE8f4;</i></a>
                                 <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
                                 <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Excluir">&#xE872;</i></a>
+                                <div id="editEmployeeModal" class="modal fade">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <form action="{{route('guilds.editar', ['id' => $guild['id']])}}" method="post">
+                                                @csrf
+                                                <div class="modal-header">						
+                                                    <h4 class="modal-title">Editar servidor</h4>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                </div>
+                                                <div class="modal-body">					
+                                                    <div class="form-group">
+                                                        <label>Nome</label>
+                                                        <input name="name" type="text" class="form-control" required>
+                                                    </div>				
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                                                    <input type="submit" class="btn btn-info" value="Salvar">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="deleteEmployeeModal" class="modal fade">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <form action="{{ route('guilds.delete', ['id' => $guild['id']]) }}">
+                                                @csrf
+                                                <div class="modal-header">						
+                                                    <h4 class="modal-title">Sair do servidor</h4>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                </div>
+                                                <div class="modal-body">					
+                                                    <p>Você tem certeza que deseja sair deste servidor?</p>
+                                                    @if (1 == 2)
+                                                        <p class="text-warning"><small>Essa ação não pôde ser concluida.</small></p>
+                                                    @endif
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                                                    <input type="submit" class="btn btn-danger" value="Deletar">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                     @endforeach
@@ -116,7 +166,8 @@
 <div id="addEmployeeModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form>
+			<form action="{{ route('guild') }}" method="POST" class="login-form">
+				@csrf
 				<div class="modal-header">						
 					<h4 class="modal-title">Criar servidor</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -124,7 +175,7 @@
 				<div class="modal-body">					
 					<div class="form-group">
 						<label>Nome</label>
-						<input type="text" class="form-control" required>
+						<input name="name" type="text" class="form-control" required>
 					</div>				
 				</div>
 				<div class="modal-footer">
@@ -136,50 +187,8 @@
 	</div>
 </div>
 <!-- Edit Modal HTML -->
-<div id="editEmployeeModal" class="modal fade">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<form>
-				<div class="modal-header">						
-					<h4 class="modal-title">Editar servidor</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				</div>
-				<div class="modal-body">					
-					<div class="form-group">
-						<label>Nome</label>
-						<input type="text" class="form-control" required>
-					</div>				
-				</div>
-				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-					<input type="submit" class="btn btn-info" value="Salvar">
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
+
 <!-- Delete Modal HTML -->
-<div id="deleteEmployeeModal" class="modal fade">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<form>
-				<div class="modal-header">						
-					<h4 class="modal-title">Sair do servidor</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				</div>
-				<div class="modal-body">					
-					<p>Você tem certeza que deseja sair deste servidor?</p>
-                    @if (1 == 2)
-					    <p class="text-warning"><small>Essa ação não pôde ser concluida.</small></p>
-                    @endif
-				</div>
-				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-					<input type="submit" class="btn btn-danger" value="Deletar">
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
+
 </body>
 </html>

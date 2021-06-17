@@ -32,14 +32,16 @@ class UserController extends Controller
 
     public function create(Request $r)
     {
-        $validated = $r->validate([
-            'name' => 'required|max:255',
-            'email' => 'required|unique:users|max:255',
-            'username' => 'required|max:255',
-            'birthday' => 'required|max:255',
-            'password' => 'required|max:255',
-        ]);
+        // $validated = $r->validate([
+        //     'name' => 'required|max:255',
+        //     'email' => 'required|max:255',
+        //     'username' => 'required|max:255',
+        //     'birthday' => 'required|max:255',
+        //     'password' => 'required|max:255',
+        // ]);
 
+        // var_dump($validated);
+        // exit;
         $user = new User();
         $user->name = 'Lok';
         $user->email = $r->email;

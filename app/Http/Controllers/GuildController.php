@@ -2,20 +2,44 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Guild;
 use Illuminate\Http\Request;
 
 class GuildController extends Controller
 {
     public function index() {
-        $dados['guilds'] = [
-            ['name' => 'Disboard', 'members' => 55, 'bots' => 13, 'roles' => 12, 'channel_texts' => 13, 'channel_voice' => 25],
-            ['name' => 'Epoch', 'members' => 7, 'bots' => 6, 'roles' => 5, 'channel_texts' => 13, 'channel_voice' => 3],
-            ['name' => 'Genshin', 'members' => 450, 'bots' => 23, 'roles' => 25, 'channel_texts' => 13, 'channel_voice' => 45],
-            ['name' => 'Blue Protocol', 'members' => 450, 'bots' => 23, 'roles' => 25, 'channel_texts' => 13, 'channel_voice' => 45],
-            ['name' => 'VALORANT', 'members' => 450, 'bots' => 23, 'roles' => 25, 'channel_texts' => 13, 'channel_voice' => 45],
-            ['name' => 'LOL', 'members' => 450, 'bots' => 23, 'roles' => 25, 'channel_texts' => 13, 'channel_voice' => 45]
-        ];
 
-        return view('guilds', $dados);
+        $guilds['guilds'] = Guild::all();
+
+        return view('guilds', $guilds);
+    }
+
+    public function create(Request $r)
+    {
+
+        $guild = new Guild();
+        $guild->name = $r->name;
+
+        if ($guild->save()) {
+            return redirect('guilds');
+        }
+    }
+
+    public function delete(int $id)
+    {
+        Guild::destroy($id);
+        return redirect()->route('guilds.listar')->with('sucesso', 'Livro excluído com sucesso');
+    }
+
+    public function editar(Request $request, int $id) {
+
+        $request->validate([
+            'name'  => 'required',
+        ]);
+
+        Guild::where('id', $id)->update($request->except('_token'));
+
+
+        return redirect()->route('guilds.listar')->with('sucesso', 'Livro atualizado com sucesso');
     }
 } 
